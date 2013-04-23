@@ -1,0 +1,8 @@
+(define (larger-sum-square x y z)
+	(define (is-smallest candidate challenger1 challenger2)
+		(and (<= candidate challenger1) (<= candidate challenger2)))
+	(define (sum-square a b)
+		(+ (* a a) (* b b)))
+	(cond ((is-smallest x y z) (sum-square y z))
+		  ((is-smallest y x z) (sum-square x z))
+		  ((is-smallest z x y) (sum-square x y))))
