@@ -4,7 +4,7 @@
 (define (average a b) (/ (+ a b) 2))
 (define (sqrt x)
     (define (good-enough? guess x)
-        (< (abs (- (square guess) x)) 0.0001))
+        (< (abs (- (square guess) x)) 0.001))
     (define (improve guess x)
         (average guess (/ x guess)))
     (define (sqrt-iter guess x)
